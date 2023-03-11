@@ -37,18 +37,31 @@ const products = [
 // }
 
 
+//simple search function to  search an item from an array object
 
+// function matchedItem(products, search) {
+//     let matched = [];
+
+//     for (const product of products) {
+//         if (product.name.includes(search)) {
+//             matched.push(product);
+//         }
+//     }
+//     return matched;
+// }
+
+//function to avoid case sensitive issue
 function matchedItem(products, search) {
     let matched = [];
 
     for (const product of products) {
-        if (product.name.includes(search)) {
+        if (product.name.toLowerCase().includes(search.toLowerCase())) {
             matched.push(product);
         }
     }
     return matched;
 }
 
-let searchItem = 'phone';
+let searchItem = 'Phone';
 const result = matchedItem(products, searchItem);
 console.log(result);
